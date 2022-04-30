@@ -1,7 +1,7 @@
 from aiogram import executor
 from config import dp
 import logging
-from handlers import callback, client, notification, fsmAdminMenu
+from handlers import callback, client, notification, fsmAdminMenu, inline
 from database import bot_dp
 
 async def on_start_up(_):
@@ -10,6 +10,7 @@ async def on_start_up(_):
 client.register_hendlers_client(dp)
 callback.register_hendlers_callback(dp)
 # fsmAdminGetUser.register_hendler_fsmAdminGetUser(dp)
+inline.register_handler_inline(dp)
 fsmAdminMenu.register_hendler_fsmAdminMenu(dp)
 
 notification.register_hendlers_notification(dp)
