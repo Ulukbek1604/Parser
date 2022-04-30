@@ -43,7 +43,7 @@ async def inline_google_handler(query: types.InlineQuery):
 
 async def inline_wikipedia_handler(query: types.InlineQuery):
     text = query.query or "echo"
-    links = f"https://ru.wikipedia.org/wiki/={text}"
+    links = f"https://ru.wikipedia.org/wiki/{text}"
     result_id: str = hashlib.md5(text.encode()).hexdigest()
     articles = [
         types.InlineQueryResultArticle(
